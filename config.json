@@ -1,0 +1,54 @@
+{
+    "token":"MTEyNTc2NzAyMzQwMjY4ODY1NQ.G-F9A5.ORhNbL75n18wV4C04XAq8hx5QbRZVBBwjt8EOk",
+    "ClientID": "1125767023402688655",
+    "AutoVoiceChat": [
+        {
+            "id": "1161625966397882458",
+            "category": "1161625807895134228",
+            "title": "%username%'s Zone",
+            "permission": {
+                "everyone": [true, true, true]
+            }
+        },
+        {
+            "id": "1144289794726309958",
+            "category": "1124295086939840512",
+            "title": "%username%'s Private",
+            "permission": {
+                "everyone": [true, false, false]
+            }
+        },
+        {
+            "id": "1144657878054080522",
+            "category": "1144657819317051493",
+            "title": "%username%'s Hidden",
+            "permission": {
+                "everyone": [false, false, false]
+            }
+        }
+    ],
+    "AnitBot": {
+        "AllowUserIds": [
+            "758681611251744788",
+            "276060004262477825",
+            "1125767023402688655"
+        ],
+        "BlockChannels": [
+            "1121835679148679228",
+            "1121835721586647071",
+            "1121829942771073135",
+            "1126881741328617473",
+            "1127538205315575838",
+            "1124286924463554591",
+            "1139159580618784808"
+        ]
+    },
+    "Commands": {
+        "newpoll": {
+            "id": "1126881741328617473"
+        },
+        "newcountdown": {
+            "id": "1127538205315575838"
+        }
+    }
+}
