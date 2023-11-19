@@ -61,13 +61,6 @@ module.exports = {
                 })
 
                 await newState.member.edit({ channel: voiceChannel });
-
-                const interval = setInterval(async () => {
-                    if (voiceChannel.members.size === 0) {
-                        await voiceChannel.delete();
-                        clearInterval(interval);
-                    }
-                }, 2000);
             }
         })
     },
