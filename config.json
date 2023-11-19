@@ -4,14 +4,16 @@
     "AutoVoiceChat": [
         {
             "id": "1161625966397882458",
+            "type": "VoiceChannel",
             "category": "1161625807895134228",
-            "title": "%username%'s Zone",
+            "title": "%username%'s Voice Channel",
             "permission": {
                 "everyone": [true, true, true]
             }
         },
         {
             "id": "1144289794726309958",
+            "type": "PrivateVoiceChannel",
             "category": "1124295086939840512",
             "title": "%username%'s Private",
             "permission": {
@@ -20,6 +22,7 @@
         },
         {
             "id": "1144657878054080522",
+            "type": "HidenVoiceChannel",
             "category": "1144657819317051493",
             "title": "%username%'s Hidden",
             "permission": {

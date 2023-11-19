@@ -3,28 +3,27 @@ const config = require('../../config.json');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('invitetopricatevoicechat')
-    .setDescription("Create New Poll")
+    .setName('invitetoprivatevoicechat')
+    .setDescription("Invite some Member to Join Your Voice Channel")
     .setDescriptionLocalizations({
-      th: "สร้างโพลล์ใหม่",
+      th: "เชิญใครบางคนเพื่อเข้าร่วมช่องเสียง",
     })
     .addUserOption(option =>
       option.setName('member')
         .setDescription("Select the member to invite")
         .setRequired(true)
         .setDescriptionLocalizations({
-          th: "เลือผู้ใช้ที่ต้องการเชิญ",
+          th: "เลือกผู้ใช้ที่ต้องการเชิญ",
         })),
   async execute(interaction, client) {
     const member = interaction.options.getMember('member');
     const user = interaction.member;
 
     if (!user.voice.channel) {
-        await interaction.reply({
+        return await interaction.reply({
             content: 'You must be in a voice channel to invite someone.',
             ephemeral: true,
         });
-        return;
     }
 
     const voiceChannel = user.voice.channel;
@@ -40,6 +39,6 @@ module.exports = {
         ephemeral: true,
     });
 
-    await user.send({ embeds: [new EmbedBuilder().setDescription(`**You have invited to join ${voiceChannel}**`).setColor('Green').setTimestamp(Date.now()).setFooter({text: `Invited by ${interaction.member.displayName}`,iconURL: `${interaction.member.displayAvatarURL({ extension: 'png' })}`})]});
+    await member.send({ embeds: [new EmbedBuilder().setDescription(`**You have invited to join ${voiceChannel}**`).setColor('Green').setTimestamp(Date.now()).setFooter({text: `Invited by ${interaction.member.displayName}`,iconURL: `${interaction.member.displayAvatarURL({ extension: 'png' })}`})]});
 },
 };

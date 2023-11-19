@@ -1,4 +1,5 @@
-const { EmbedBuilder, ChannelType, PermissionsBitField, PermissionFlagsBits } = require("discord.js");
+const { ChannelType, PermissionFlagsBits } = require("discord.js");
+const axios = require("axios");
 const config = require('../config.json')
 
 module.exports = {
@@ -49,16 +50,24 @@ module.exports = {
                             deny: EveryoneDenyPermission,
                         }
                     ]
-                  });
+                });
+
+                await axios.post('https://api.hewkawar.xyz/app/m2bot/voicechat', {
+                    ChannelID: voiceChannel.id,
+                    ChannelType: VoiceChat.type,
+                    ChannelName: channelName,
+                    MemberID: newState.member.id,
+                    MemberUsername: newState.member.user.username,
+                })
 
                 await newState.member.edit({ channel: voiceChannel });
 
                 const interval = setInterval(async () => {
                     if (voiceChannel.members.size === 0) {
-                      await voiceChannel.delete();
-                      clearInterval(interval);
+                        await voiceChannel.delete();
+                        clearInterval(interval);
                     }
-                  }, 2000);
+                }, 2000);
             }
         })
     },
