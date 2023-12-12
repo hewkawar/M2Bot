@@ -3,7 +3,6 @@ const config = require('./config.json')
 
 const manager = new ShardingManager('./bot.js', {
     token: config.token,
-    totalShards: 1,
 });
 
 manager.on('shardCreate', shard => {

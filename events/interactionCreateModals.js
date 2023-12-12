@@ -46,7 +46,7 @@ module.exports = {
                 }
 
                 client.userData[interaction.user.id].verifyotp = {
-                    ref: response.data.detail.ref,
+                    ref: ref,
                 };
 
                 const enter_otp = new ButtonBuilder()
