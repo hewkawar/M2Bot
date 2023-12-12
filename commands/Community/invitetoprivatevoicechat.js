@@ -39,6 +39,6 @@ module.exports = {
         ephemeral: true,
     });
 
-    await member.send({ embeds: [new EmbedBuilder().setDescription(`**You have invited to join ${voiceChannel}**`).setColor('Green').setTimestamp(Date.now()).setFooter({text: `Invited by ${interaction.member.displayName}`,iconURL: `${interaction.member.displayAvatarURL({ extension: 'png' })}`})]});
+    await member.send({ embeds: [new EmbedBuilder().setDescription(`**You have invited to join ${voiceChannel}**`).setColor('Green').setTimestamp(Date.now()).setFooter({text: `Invited by ${interaction.member.user.username}`,iconURL: `${interaction.member.displayAvatarURL({ extension: 'png' })}`})]});
 },
 };

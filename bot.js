@@ -3,12 +3,20 @@ const fs = require('fs');
 
 const client = new Client({
     intents: [
+        GatewayIntentBits.DirectMessages,
         GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.GuildVoiceStates,
+        GatewayIntentBits.GuildIntegrations,
+        GatewayIntentBits.GuildModeration,
         GatewayIntentBits.MessageContent,
     ]
 });
+
+if (!client.userData) {
+    client.userData = {};
+}
 
 client.commands = new Collection();
 

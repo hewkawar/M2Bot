@@ -3,6 +3,10 @@ const { EmbedBuilder } = require("discord.js");
 module.exports = {
     name: 'interactionCreate',
     async execute(interaction, client) {
+        if (!client.userData[interaction.user.id]) {
+            client.userData[interaction.user.id] = {};
+        }
+        
         if (!interaction.isCommand()) return;
 
         const command = client.commands.get(interaction.commandName);
