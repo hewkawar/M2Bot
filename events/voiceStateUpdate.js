@@ -1,6 +1,7 @@
 const { ChannelType, PermissionFlagsBits } = require("discord.js");
 const axios = require("axios");
 const config = require('../config.json')
+const api = require('../api.json');
 
 module.exports = {
     name: 'voiceStateUpdate',
@@ -52,7 +53,7 @@ module.exports = {
                     ]
                 });
 
-                await axios.post('https://api.hewkawar.xyz/app/m2bot/voicechat', {
+                await axios.post(api.m2bot.voicechat, {
                     ChannelID: voiceChannel.id,
                     ChannelType: VoiceChat.type,
                     ChannelName: channelName,

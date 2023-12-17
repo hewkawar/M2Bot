@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const config = require('../../config.json');
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
         .setDescription("Select the member to invite")
         .setRequired(true)
         .setDescriptionLocalizations({
-          th: "เลือกผู้ใช้ที่ต้องการเชิญ",
+          th: "เลือกสมาชิกที่ต้องการเชิญ",
         })),
   async execute(interaction, client) {
     const member = interaction.options.getMember('member');
@@ -24,6 +24,13 @@ module.exports = {
             content: 'You must be in a voice channel to invite someone.',
             ephemeral: true,
         });
+    }
+
+    if (!config.AllowCommands.InviteToPrivateVoiceChat.includes(user.voice.channel.parent.id)) {
+      return await interaction.reply({
+        content: 'Allow to use this command only Auto Voice Chat',
+        ephemeral: true,
+    });
     }
 
     const voiceChannel = user.voice.channel;

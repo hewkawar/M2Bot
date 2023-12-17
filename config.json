@@ -1,7 +1,13 @@
 {
-    "token":"MTEyNTc2NzAyMzQwMjY4ODY1NQ.G-F9A5.ORhNbL75n18wV4C04XAq8hx5QbRZVBBwjt8EOk",
     "ClientSecret": "TaAtAqVjR3570N4tP-HWUy3xGYd7aU32",
     "ClientID": "1125767023402688655",
+    "AllowCommands": {
+        "InviteToPrivateVoiceChat": [
+            "1161625807895134228",
+            "1124295086939840512",
+            "1144657819317051493"
+        ]
+    },
     "AutoVoiceChat": [
         {
             "id": "1161625966397882458",

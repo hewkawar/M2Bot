@@ -3,6 +3,7 @@ const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 
 const config = require('../config.json');
+const token = require('../token.json')
 
 module.exports = (client) => {
     client.handleCommands = async (commandFolders, path) => {
@@ -27,7 +28,7 @@ module.exports = (client) => {
 
         const rest = new REST({
             version: '10'
-        }).setToken(config.token);
+        }).setToken(token);
 
         (async () => {
             try {

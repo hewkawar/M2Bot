@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.2",
-    "discord.js": "^14.14.1",
-    "nodemailer": "^6.9.7"
+    "discord.js": "^14.14.1"
   }
 }
